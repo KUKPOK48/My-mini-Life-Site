@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My site tutor</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(120deg, #ff4f00, #7a00ff, #000000);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .intro {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease;
+            z-index: 1;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .content {
+            padding: 20px;
+            max-width: 900px;
+            margin: 120px auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideIn 1s ease forwards;
+            animation-delay: 2s;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .text-section {
+            margin: 20px 0;
+        }
+
+        .text-section h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .text-section p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .image-section {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .hidden-content {
+            display: none;
+            padding: 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .show-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #ff4f00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .show-button:hover {
+            background-color: #e24400;
+        }
+
+        .hidden-content p {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .video-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #7a00ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-button:hover {
+            background-color: #6a00e0;
+        }
+
+        .back-home-button {
+            display: none;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-home-button:hover {
+            background-color: #45a049;
+        }
+
+        .smart-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #00bcd4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .smart-button:hover {
+            background-color: #0097a7;
+        }
+
+        .clicker-counter {
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+
+    <div class="intro" id="intro">
+        <h1>Welcome</h1>
+        <p>первый мини сайтик</p>
+    </div>
+
+    <div class="content" id="mainContent">
+        <div class="text-section">
+            <h2>сайт посвещен истории. я буду всегда обновлять её</h2>
+            <p>что я делал- я пытался найти себя и игры делал мини прикольные, 3д моделированние меня прикалывает. кодить  не много умею на Lua, html, java и java skript пробовал не много.</p>
+        </div>
+        <div class="text-section">
+            <h2>ещё не нужной инфы</h2>
+            <p>Боксом занимаю уже 3 года не особо чего-то добился чемпионаты международные были но у меня постояно второе место всегда попаду в финал ну вот так. Mimo и ютуб помагали кодить а когда я не понемал что не так с кодом я шел к chatgpt.</p>
+        </div>
+    </div>
+
+    <button class="show-button" id="showButton" style="display: none;">ТЫК</button>
+
+    <div class="hidden-content" id="hiddenContent">
+        <h2>полная история</h2>
+        <p>Бокс- у меня в этом спорте просто все ну один момент до сих пор бесит то что, я выйграл на спаренгах на соревах одного человека а он меня победил на чемпионате забрав второе место и верез  2 недели я ево победил. я не буду отговариваться тем что я тогда должен был скинуть вес.</p>
+        <p>Игры- Превая игра была на гуд док про паркур мини нечего такого. Вторая игра забыл на каком лаунчере была то что едет машинка бесконечно а там препятствие и так вечно. Третия была на гейм мейкер там нинзя паркур подберай монетки и все. 1-2Д.2-3Д.3-2Д.</p>
+        <p>Моделированние- там нечего такого, просто обычной фигней. Учитель у нас есть Александр Тесла он крутой на самлм деле кодить умеет и 3Д моделировать. у меня не очень получалось в классе мне не хотелось работать в такой обстановке а вот дома я уже 34 мини проекта смоделировал.</p>
+        <p>Музыка- ну тут я еще учусь как и везде чтото полуеться просто прикольно убить время.</p>
+        <p>Код- ну это уже смерть, слишком много надо знать в гей мейкере все легко и на луа ну что я более мение знаю легко и этот сайт на легком сделал. Проблема у меня с цветами были ну ушли. на этом все мне нечего сказать только спасибо если зашли на сайт.</p>
+        <a href="https://youtu.be/t_DrPdfzZPI?si=yqlZQK385woQxPYZ" target="_blank" class="video-button">посмотри</a>
+    </div>
+
+    <button class="back-home-button" id="backHomeButton">Главная страница</button>
+
+    <!-- Кнопка умного кликера -->
+    <button class="smart-button" id="smartButton">УМНЫЙ</button>
+    <div class="clicker-counter" id="clickerCounter">Клики: 0</div>
+
+    <script>
+        window.addEventListener('load', () => {
+            const intro = document.getElementById('intro');
+            const mainContent = document.getElementById('mainContent');
+            const showButton = document.getElementById('showButton');
+            const hiddenContent = document.getElementById('hiddenContent');
+            const backHomeButton = document.getElementById('backHomeButton');
+            const smartButton = document.getElementById('smartButton');
+            const clickerCounter = document.getElementById('clickerCounter');
+
+            let clickCount = 0;
+
+            setTimeout(() => {
+                intro.classList.add('hidden');
+                mainContent.style.opacity = 1;
+                showButton.style.display = 'block';
+            }, 2000);
+
+            showButton.addEventListener('click', () => {
+                mainContent.classList.add('hidden');
+                showButton.classList.add('hidden');
+                hiddenContent.style.display = 'block';
+                backHomeButton.style.display = 'block';
+                smartButton.style.display = 'block';
+                clickerCounter.style.display = 'block'; 
+            });
+
+            backHomeButton.addEventListener('click', () => {
+                hiddenContent.style.display = 'none';
+                backHomeButton.style.display = 'none';
+                smartButton.style.display = 'none';  
+                clickerCounter.style.display = 'none';
+                mainContent.classList.remove('hidden');
+                showButton.style.display = 'block';
+            });
+
+            // Умный кликер
+            smartButton.addEventListener('click', () => {
+                clickCount++;
+                clickerCounter.textContent = `Клики: ${clickCount}`;
+            });
+        });
+    </script>
+</body>
+</html>
